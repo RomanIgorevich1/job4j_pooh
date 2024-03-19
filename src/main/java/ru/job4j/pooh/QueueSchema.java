@@ -9,6 +9,7 @@ public class QueueSchema implements Schema {
     private final ConcurrentHashMap<String, CopyOnWriteArrayList<Receiver>> receivers = new ConcurrentHashMap<>();
     private final ConcurrentHashMap<String, BlockingQueue<String>> data = new ConcurrentHashMap<>();
     private final Condition condition = new Condition();
+
     @Override
     public void addReceiver(Receiver receiver) {
         receivers.putIfAbsent(receiver.name(), new CopyOnWriteArrayList<>());

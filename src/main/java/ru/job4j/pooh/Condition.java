@@ -13,7 +13,7 @@ public class Condition {
         notify();
     }
 
-    synchronized void await () throws InterruptedException {
+    synchronized void await() throws InterruptedException {
         while (!flag) {
             wait();
         }
